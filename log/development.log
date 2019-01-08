@@ -1,0 +1,1294 @@
+Started GET "/" for 127.0.0.1 at 2019-01-04 19:05:03 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (12.5ms)
+Completed 200 OK in 54ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-04 19:05:06 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-04 19:37:45 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (399.3ms)
+Completed 500 Internal Server Error in 429ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<#<Class:0x000000053d6440>:0x000000053c8e58>):
+    4:       <h1>Welcome!</h1>
+    5:       <p>Register to get started.</p>
+    6:       <p>
+    7:         <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+    8:       </p>
+    9:     </div>
+   10:   </div>
+  
+app/views/pages/index.html.erb:7:in `block in _app_views_pages_index_html_erb___1991531200045450922_43957360'
+app/views/pages/index.html.erb:1:in `_app_views_pages_index_html_erb___1991531200045450922_43957360'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.7ms)
+  [1m[35m (107.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (72.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8417739188407413060);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20190104144135)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (85.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "name" character varying, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (46.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_unlock_token" ON "users"  ("unlock_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190104144135"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-04 14:48:27.874739"], ["updated_at", "2019-01-04 14:48:27.874739"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8417739188407413060)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2019-01-04 19:57:18 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 7588ms (Views: 7573.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-04 19:57:31 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (4.5ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application (199.4ms)
+Completed 200 OK in 301ms (Views: 253.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-04 19:57:43 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (3.2ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-04 19:58:03 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-04 20:02:27 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-04 20:04:59 +0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sit7n5k9kq4W4vVsye8R2Wtdgnc2fO323RzA8jPBBBVzva6s/Z9UpBszS5oxgDRHj9YPgpYVxiZO16MG6hdt0g==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ramzan595@yahoo.com"], ["encrypted_password", "$2a$11$7jdTe47th.K3r9ssYL1qD.KMK15UJB89rkoy3IR8MrxEkaXqUE2P2"], ["confirmation_token", "LxE8Az2_dnG6DCjbtW63"], ["confirmation_sent_at", "2019-01-04 15:04:59.860041"], ["created_at", "2019-01-04 15:04:59.859809"], ["updated_at", "2019-01-04 15:04:59.859809"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 389.1ms
+Sent mail to ramzan595@yahoo.com (9.4ms)
+Date: Fri, 04 Jan 2019 20:05:00 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ramzan595@yahoo.com
+Message-ID: <5c2f761c7487e_56dd281a51811656@mateen-HP-ProBook-4530s.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ramzan595@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://127.0.0.1:3000/users/confirmation?confirmation_token=LxE8Az2_dnG6DCjbtW63">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 993ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-04 20:05:00 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-04 20:11:00 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-04 20:11:28 +0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N7ssf78DxL9I4s9h77ujAJkgs0JFfF2s52DNgPNQxSMOLflM26ECtUUzcZcX1Iaefas+t+UVdnx0q650Koas5A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 286ms (Views: 40.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2019-01-04 20:11:38 +0500
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/confirmations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (4.3ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/confirmations/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 124ms (Views: 69.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2019-01-04 20:11:54 +0500
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/NQ6R6ULQwL2P2ClvZ5KxzbbXuodXo8kBSVJVtBFQ3bCy6a5OpjyP9J61sE/U5n2y1xmjFEjn5X1TCcAG+LCMw==", "user"=>{"email"=>"ramzan595@yahoo.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."unconfirmed_email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["unconfirmed_email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.1ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 15.8ms
+Sent mail to ramzan595@yahoo.com (2.7ms)
+Date: Fri, 04 Jan 2019 20:11:54 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ramzan595@yahoo.com
+Message-ID: <5c2f77ba4317f_56dd281a06811723@mateen-HP-ProBook-4530s.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ramzan595@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://127.0.0.1:3000/users/confirmation?confirmation_token=LxE8Az2_dnG6DCjbtW63">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 44ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-04 20:11:54 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-07 16:30:36 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (35.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 612ms (Views: 581.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-07 16:30:40 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/devise-4.5.0/app/views/devise/registrations/new.html.erb within layouts/application (145.7ms)
+Completed 200 OK in 322ms (Views: 213.3ms | ActiveRecord: 60.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-07 17:01:07 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 464ms (Views: 414.1ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-07 17:02:01 +0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TwKOHDlopAMEg+C7cF/Igg41yJO/W+eAh91zESuIoJwj37tkywpkrPeFTjLOjWHKsA7sC1gCx7tYbwcFGtpi6A==", "user"=>{"name"=>"Khan", "email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (48.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 504ms (Views: 76.6ms | ActiveRecord: 49.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-01-07 17:03:03 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (40.5ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.3ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (120.7ms)
+Started GET "/" for 127.0.0.1 at 2019-01-07 17:03:20 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 337ms (Views: 333.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-07 17:03:23 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 113ms (Views: 79.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-07 17:03:30 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 108ms (Views: 103.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2019-01-07 17:03:44 +0500
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-07 20:03:32 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (7.1ms)
+Started GET "/" for 127.0.0.1 at 2019-01-07 20:03:37 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8010ms (Views: 7993.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2994ms (Views: 2991.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-07 20:03:54 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 144ms (Views: 108.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2019-01-07 20:04:04 +0500
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2019-01-07 20:04:18 +0500
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R7PIMp/Ud9MwoveXowUq9Fax/CrFV6ob3xb7BCqLk4V352qhG+KL8bf0z62+qTWgrAvdYAsWwujuxSjfTJHuJw==", "user"=>{"email"=>"ramzan595@yahoo.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."unconfirmed_email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["unconfirmed_email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 322.8ms
+Sent mail to ramzan595@yahoo.com (6037.9ms)
+Date: Mon, 07 Jan 2019 20:04:19 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ramzan595@yahoo.com
+Message-ID: <5c336a73492e2_6a01299dd04237c2@mateen-HP-ProBook-4530s.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ramzan595@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://sitepoint-devise.herokuapp.com/users/confirmation?confirmation_token=LxE8Az2_dnG6DCjbtW63">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6430ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:04:25 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2019-01-07 20:06:26 +0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 58ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2019-01-07 20:06:44 +0500
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OHKQq39SzMqcX9n1IOvn0DgaGF2EC+BV3FPa67hcuM8DCuB10oKuFEs2TTQAxj5rY7c/3HLrYeTa1eG8Ngv8+A==", "user"=>{"email"=>"ramzan595@yahoo.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "a607a1a04bb312fe60b09a14c5115c8d4cb8d94c3e68fc3ecbd836fc0420af0e"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "a607a1a04bb312fe60b09a14c5115c8d4cb8d94c3e68fc3ecbd836fc0420af0e"], ["reset_password_sent_at", "2019-01-07 15:06:44.511838"], ["updated_at", "2019-01-07 15:06:44.513884"], ["id", 1]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.9ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 31.2ms
+Sent mail to ramzan595@yahoo.com (5954.0ms)
+Date: Mon, 07 Jan 2019 20:06:44 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ramzan595@yahoo.com
+Message-ID: <5c336b048d35c_6a01299dbec23824@mateen-HP-ProBook-4530s.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello ramzan595@yahoo.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://sitepoint-devise.herokuapp.com/users/password/edit?reset_password_token=GriypNayptFkofdoAJ_o">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6341ms (ActiveRecord: 38.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:06:50 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 84ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/unlock/new" for 127.0.0.1 at 2019-01-07 20:07:22 +0500
+Processing by Devise::UnlocksController#new as HTML
+  Rendering devise/unlocks/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/unlocks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 86ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:07:27 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:07:35 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RINUzZG0MvpkqJ4Gw7N210YMcT3gcSqtbyHQvFAwQBKEi0EB4qllMv2PLUbbDJM2CE2tcscymE+d17AU3lmXsg==", "user"=>{"email"=>"ca2@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ca2@a.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RINUzZG0MvpkqJ4Gw7N210YMcT3gcSqtbyHQvFAwQBKEi0EB4qllMv2PLUbbDJM2CE2tcscymE+d17AU3lmXsg==", "user"=>{"email"=>"ca2@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 314ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:08:04 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ejp5x4K8K6yj2Wq29AaCW703w/CaKn45ybn5hQ9HYPcW50y/cN7rA1DfxD9K1CsTAwznaH1zXgIWC42RPhWigw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 1], ["updated_at", "2019-01-07 15:08:04.964597"], ["id", 1]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 245ms (ActiveRecord: 8.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ejp5x4K8K6yj2Wq29AaCW703w/CaKn45ybn5hQ9HYPcW50y/cN7rA1DfxD9K1CsTAwznaH1zXgIWC42RPhWigw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 258ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:08:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuAJIRewXQxep0Ik55W8IRSEVZH6wS6WE15mgJmI4g2iPTxZ5dKdo62h7K1ZRxVpqr9xCR2YDq3M7BKUqNogeQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 2], ["updated_at", "2019-01-07 15:08:17.463353"], ["id", 1]]
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 271ms (ActiveRecord: 19.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuAJIRewXQxep0Ik55W8IRSEVZH6wS6WE15mgJmI4g2iPTxZ5dKdo62h7K1ZRxVpqr9xCR2YDq3M7BKUqNogeQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 263ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:09:55 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UIqkOM516NnIfLTvbxvf6hUfdsaOcAJn3Z4z9MRX/hQ8V5FAPBcodjt6GmbRyXaiqyRSXmkpIlwCLEfg9QU8YA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 3], ["updated_at", "2019-01-07 15:09:55.883303"], ["id", 1]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 256ms (ActiveRecord: 16.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UIqkOM516NnIfLTvbxvf6hUfdsaOcAJn3Z4z9MRX/hQ8V5FAPBcodjt6GmbRyXaiqyRSXmkpIlwCLEfg9QU8YA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 261ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:09:59 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQSiAfklet93sdhltLlI6lJi061j6jLgNoWBl+SdAGPh2Zd5C0e6cIS3duwKa+Gi7Fn3NYSzEtvpN/WD1c/CFw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 4], ["updated_at", "2019-01-07 15:10:00.127124"], ["id", 1]]
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 256ms (ActiveRecord: 17.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQSiAfklet93sdhltLlI6lJi061j6jLgNoWBl+SdAGPh2Zd5C0e6cIS3duwKa+Gi7Fn3NYSzEtvpN/WD1c/CFw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 267ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:10:03 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fyn35Dnn1rMNmIo5CqK1B52UTKbJlzCw1gUrIV2MbloT9MKcy4UWHP6eJLC0cBxPI69oPi7OEIsJt181bN6sLg==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 5], ["updated_at", "2019-01-07 15:10:03.825485"], ["id", 1]]
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 269ms (ActiveRecord: 13.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fyn35Dnn1rMNmIo5CqK1B52UTKbJlzCw1gUrIV2MbloT9MKcy4UWHP6eJLC0cBxPI69oPi7OEIsJt181bN6sLg==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 262ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:10:07 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s2a0UfYKFSaBveA5XAYHfxwG2Hub4zfbqDhcUhEB6THfu4EpBGjViXK7TrDi1K43oj3843y6F+B3iihGIFMrRQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 6], ["updated_at", "2019-01-07 15:10:07.871627"], ["id", 1]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 258ms (ActiveRecord: 14.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s2a0UfYKFSaBveA5XAYHfxwG2Hub4zfbqDhcUhEB6THfu4EpBGjViXK7TrDi1K43oj3843y6F+B3iihGIFMrRQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 259ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:10:12 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZstXXN1m57splKr3Ix3bcGloopZAs1BlBstV7I2KzoAKFmIkLwQnFNqSBH6dz3I411OGDqfqcF7ZeSH4vNgM9A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 7], ["updated_at", "2019-01-07 15:10:12.581921"], ["id", 1]]
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 258ms (ActiveRecord: 22.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZstXXN1m57splKr3Ix3bcGloopZAs1BlBstV7I2KzoAKFmIkLwQnFNqSBH6dz3I411OGDqfqcF7ZeSH4vNgM9A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 262ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:10:16 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBAVdpj69sl6TwPu9LY50VmFe7lkHU1r33L+x9eOdyT4zSAOapg2ZolJrWdKZJCZ575fIYNEbVAAwIrT5ty1UA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 8], ["updated_at", "2019-01-07 15:10:17.199555"], ["id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 251ms (ActiveRecord: 16.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBAVdpj69sl6TwPu9LY50VmFe7lkHU1r33L+x9eOdyT4zSAOapg2ZolJrWdKZJCZ575fIYNEbVAAwIrT5ty1UA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 258ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:12:47 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 406ms (Views: 361.9ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:06 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSJUlSsOKaBqeVcpxbR2ROSTIcksysgoRcIymjRZLjHx/2Ht2WzpD5l/+aB7Zt8MWqgFUcuT6BOacEaOBQvsRQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."unlock_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["unlock_token", "50e97805274edb123f1b2af6a10bc867dbde4686dad4b418941682fa0bb7e7b9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "locked_at" = $1, "failed_attempts" = $2, "unlock_token" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["locked_at", "2019-01-07 15:13:06.946017"], ["failed_attempts", 9], ["unlock_token", "50e97805274edb123f1b2af6a10bc867dbde4686dad4b418941682fa0bb7e7b9"], ["updated_at", "2019-01-07 15:13:07.231148"], ["id", 1]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/unlock_instructions.html.erb
+  Rendered devise/mailer/unlock_instructions.html.erb (0.9ms)
+Devise::Mailer#unlock_instructions: processed outbound mail in 334.0ms
+Sent mail to ramzan595@yahoo.com (6339.6ms)
+Date: Mon, 07 Jan 2019 20:13:07 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ramzan595@yahoo.com
+Message-ID: <5c336c839123d_6ebc24d5f889157b@mateen-HP-ProBook-4530s.mail>
+Subject: Unlock instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello ramzan595@yahoo.com!</p>
+
+<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+
+<p>Click the link below to unlock your account:</p>
+
+<p><a href="http://sitepoint-devise.herokuapp.com/users/unlock?unlock_token=gJb26oR6b57hicn5qHK2">Unlock my account</a></p>
+
+Completed 401 Unauthorized in 7212ms (ActiveRecord: 17.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSJUlSsOKaBqeVcpxbR2ROSTIcksysgoRcIymjRZLjHx/2Ht2WzpD5l/+aB7Zt8MWqgFUcuT6BOacEaOBQvsRQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 326ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:57 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2sTjQ2P/ljPN8WEkQ6JFSphLqWC8019BWlO7L1LhzsG2GdY7kZ1WnD73z639cOwCJnCN+FuKf3qF4c87Y7MMtQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 228ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2sTjQ2P/ljPN8WEkQ6JFSphLqWC8019BWlO7L1LhzsG2GdY7kZ1WnD73z639cOwCJnCN+FuKf3qF4c87Y7MMtQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 258ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:57 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BR5W4A+rsRGA5BA9DyZpKkHw3H49I+ZM+kRI2e5lkVBpw2OY/clxvnPivrSx9MBi/8v45tp6xncl9jzN3zdTJA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BR5W4A+rsRGA5BA9DyZpKkHw3H49I+ZM+kRI2e5lkVBpw2OY/clxvnPivrSx9MBi/8v45tp6xncl9jzN3zdTJA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:58 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JkGMoJkODNFSOAF6H9hxKCe0jpPL1hi1jvfdhtrqSSBKnLnYa2zMfqE+r/OhCthgmY+qCyyPOI5RRamS67iLVA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JkGMoJkODNFSOAF6H9hxKCe0jpPL1hi1jvfdhtrqSSBKnLnYa2zMfqE+r/OhCthgmY+qCyyPOI5RRamS67iLVA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 94ms (Views: 91.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:58 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iuoQniYGSUk8FjzlhhfzJh7n7GRlwQY5VQAA0ITEoiTmNyXm1GSJ5s8Qkmw4xVpuoNzI/IKYJgKKsnTEtZZgUA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iuoQniYGSUk8FjzlhhfzJh7n7GRlwQY5VQAA0ITEoiTmNyXm1GSJ5s8Qkmw4xVpuoNzI/IKYJgKKsnTEtZZgUA==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 72ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:13:59 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6GL7eJo5XANT6cIwl14OdGW8dtuNPtM1rarHnbNeUOGEv84AaFucrKDvbLkpjKc824dSQ2pn8w5yGLOJggySlQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6GL7eJo5XANT6cIwl14OdGW8dtuNPtM1rarHnbNeUOGEv84AaFucrKDvbLkpjKc824dSQ2pn8w5yGLOJggySlQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:07 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aoic7pqWb9I3tD5ofih3VZoIOVLUNrn/Fv6ysUBxlIRuVamWaPSvfcSykOHA+t4dJDMdyjNvmcTJTMalcSNW8A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 226ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aoic7pqWb9I3tD5ofih3VZoIOVLUNrn/Fv6ysUBxlIRuVamWaPSvfcSykOHA+t4dJDMdyjNvmcTJTMalcSNW8A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 261ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:16 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wP8j3HlY0cmlRzby6rYU0UNl7+upbqeijU/fnSsa2qOsIhakizoRZlZBmHtUZL2Z/V7Lc043h5lS/auJGkgY1w==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 227ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wP8j3HlY0cmlRzby6rYU0UNl7+upbqeijU/fnSsa2qOsIhakizoRZlZBmHtUZL2Z/V7Lc043h5lS/auJGkgY1w==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 259ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtWNzwMI6eU1Up7IPykQyYN7vyraTcRFy6BeHIcd+EfCCLi38WopSsZUMEGB+7mBPUCbsj0U5H4UEioItk86Mw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtWNzwMI6eU1Up7IPykQyYN7vyraTcRFy6BeHIcd+EfCCLi38WopSsZUMEGB+7mBPUCbsj0U5H4UEioItk86Mw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oJ4KvgUZv5JjKchjvx12/bLPoKeaEZDsr36K9R7dfpjMQz/G93t/PZAvZuoBz9+1DPSEP31IsNdwzP7hL4+87A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oJ4KvgUZv5JjKchjvx12/bLPoKeaEZDsr36K9R7dfpjMQz/G93t/PZAvZuoBz9+1DPSEP31IsNdwzP7hL4+87A==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5f8flq3r+7+Iubzpi7JdXuOIQ7hryR0rHkBomNp4eQeJIiruX4k7EHu/EmA1YPQWXbNnIIyQPRDB8hyM6yq7cw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5f8flq3r+7+Iubzpi7JdXuOIQ7hryR0rHkBomNp4eQeJIiruX4k7EHu/EmA1YPQWXbNnIIyQPRDB8hyM6yq7cw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UQbwNChIy+M5o9t7unEEK0ABRfkTvQOLnc8olXS3yD8928VM2ioLTMqldfIEo61j/jphYfTkI7BCfVyBReUKSw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UQbwNChIy+M5o9t7unEEK0ABRfkTvQOLnc8olXS3yD8928VM2ioLTMqldfIEo61j/jphYfTkI7BCfVyBReUKSw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:17 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eTbVA7d3jjy3OBOeZe3iyMlDLBDOpwoWoUr14IxTZ7EV6+B7RRVOk0Q+vRfbP0uAd3gIiCn+Ki1++IH0vQGlxQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eTbVA7d3jjy3OBOeZe3iyMlDLBDOpwoWoUr14IxTZ7EV6+B7RRVOk0Q+vRfbP0uAd3gIiCn+Ki1++IH0vQGlxQ==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-07 20:14:32 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HSapl4yyWEVJnyOTE74Jsdb2fPmsN54i5z1UMzpkExdx+5zvftCY6rqZjRqtbKD5aM1YYUtuvhk4jyAnCzbRYw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ramzan595@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 222ms (ActiveRecord: 1.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HSapl4yyWEVJnyOTE74Jsdb2fPmsN54i5z1UMzpkExdx+5zvftCY6rqZjRqtbKD5aM1YYUtuvhk4jyAnCzbRYw==", "user"=>{"email"=>"ramzan595@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 254ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:23:57 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (61.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (34.9ms)
+Completed 500 Internal Server Error in 565ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_signed_in' for #<#<Class:0x00000004a86160>:0x00000004a9bd80>
+Did you mean?  user_signed_in?):
+     8:         <li><%= link_to 'Home' %></li>
+     9:       </ul>
+    10:       <ul class="nav navbar-nav pull-right">
+    11:       <% if user_signed_in %>
+    12:         <li class="dropdown">
+    13:           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    14:             <%= current_user.name%>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__30334387588033556_39184700'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.7ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.5ms)
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:24:35 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 367ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registeration_path' for #<#<Class:0x00000004a86160>:0x000000041ee430>
+Did you mean?  new_user_registration_path
+               new_user_registration_url
+               cancel_user_registration_path
+               new_registration_path):
+    21:         </li>
+    22:         <% else %>
+    23:         <li><%= link_to "Sign in", new_user_session_path%></li>
+    24:         <li><%= link_to "Sign Up", new_user_registeration_path%></li>
+    25:         <% end %>
+    26:       </ul>
+    27:     </div>
+  
+app/views/layouts/application.html.erb:24:in `_app_views_layouts_application_html_erb__30334387588033556_34519500'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.7ms)
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:25:12 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:25:20 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:25:23 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:25:24 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (179.7ms)
+Completed 200 OK in 313ms (Views: 199.8ms | ActiveRecord: 74.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:25:27 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:25:29 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:25:30 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:25:32 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:25:33 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:25:39 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:26:13 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 3787ms (Views: 3784.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:26:21 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:27:20 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:27:25 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:27:27 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 70ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:27:30 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:27:32 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 80ms (Views: 75.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:27:34 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (17.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 102ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:27:39 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 89ms (Views: 84.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:27:42 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:28:32 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:34:56 +0500
+  
+SyntaxError (/home/mateen/Desktop/deviseapp/app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/pages_controller.rb:1:in `<top (required)>'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.7ms)
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:35:15 +0500
+  
+SyntaxError (/home/mateen/Desktop/deviseapp/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/pages_controller.rb:1:in `<top (required)>'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.9ms)
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:35:33 +0500
+Processing by PagesController#index as HTML
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<PagesController:0x007facd54b6f48>):
+  
+app/controllers/application_controller.rb:8:in `configure_permitted_parameters'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (141.6ms)
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:36:18 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:36:22 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:36:45 +0500
+Processing by Devise::RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007facd5e8ebb0>
+Did you mean?  fork):
+  
+app/controllers/application_controller.rb:8:in `configure_permitted_parameters'
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mateen/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:38:44 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 78ms (Views: 46.9ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:38:48 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:38:51 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:38:53 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:38:56 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:38:58 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:39:00 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:39:03 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 59ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2019-01-08 14:39:09 +0500
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 73ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/unlock/new" for 127.0.0.1 at 2019-01-08 14:39:11 +0500
+Processing by Devise::UnlocksController#new as HTML
+  Rendering devise/unlocks/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/unlocks/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2019-01-08 14:39:13 +0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/unlock/new" for 127.0.0.1 at 2019-01-08 14:39:15 +0500
+Processing by Devise::UnlocksController#new as HTML
+  Rendering devise/unlocks/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.5ms)
+  Rendered devise/unlocks/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/unlock/new" for 127.0.0.1 at 2019-01-08 14:50:42 +0500
+Processing by Devise::UnlocksController#new as HTML
+  Rendering devise/unlocks/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/unlocks/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 14:50:45 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 14:50:47 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 14:50:50 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 15:13:00 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 320ms (Views: 292.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-08 15:13:04 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 96ms (Views: 66.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-08 15:13:05 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 81ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
