@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+//= require jquery.turbolinks
+//= require bootstrap/dropdown
+
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require bootstrap_sb_admin_base_v1
+//= require sb-admin

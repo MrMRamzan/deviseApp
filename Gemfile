@@ -37,8 +37,10 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'devise'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
+gem 'bootstrap_sb_admin_base_v1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
