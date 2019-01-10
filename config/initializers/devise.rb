@@ -251,7 +251,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  config.sign_out_via = :GET
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
@@ -287,4 +287,15 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+
+    # Add the credentials from your Google application to your secrets
+  # client_id = Rails.application.secrets[:google_client_id]
+  # client_id = Rails.application.secrets[:google_client_id]
+  client_id ="181219059422-6eluaq8tl3jmbfhn5f8fhr9ef19rsbci.apps.googleusercontent.com"
+  # client_secret = Rails.application.secrets[:google_secret]
+  client_secret ="wfkFGAttIcs_ivLEWuvZw4Tg" 
+  # Configure Google omniauth with proper scope
+  config.omniauth :google_oauth2, client_id, client_secret, {
+    scope: "contacts.readonly,userinfo.email"
+  }
 end
